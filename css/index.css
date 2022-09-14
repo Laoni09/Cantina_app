@@ -1,4 +1,50 @@
-button img {
+.corpo .item {
     width: 100px;
     height: 100px;
+    border: 1px solid black;
+    margin: 10px;
+    background-color: aliceblue;
+}
+
+.corpo .option {
+    width: 80px;
+    height: 80px;
+}
+
+button:hover {
+    background-color: royalblue;
+}
+
+.corpo .pao {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.corpo .toddy {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.corpo .trento {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.reset {
+    text-align: center;
+}
+
+.resultado {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: center;
 }
