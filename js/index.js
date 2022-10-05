@@ -1,4 +1,5 @@
 var valor = 0
+var produtos = new Array()
 function subtrairpao(){
     valor -= 3.50
     document.querySelector('.resultado').innerHTML = valor
@@ -8,7 +9,8 @@ function subtrairpao(){
 function somarpao(){
     valor += 3.50
     document.querySelector('.resultado').innerHTML = valor
-    document.querySelector('.nota').innerHTML += 'Pão de queijo------------------------R$3,50'
+    produtos.splice(1, 0, 'Pão de queijo------------------------R$3,50')
+    document.querySelector('.nota').innerHTML += produtos
 }
 
 function subtrairtoddy(){
