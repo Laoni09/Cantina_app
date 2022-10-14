@@ -3,6 +3,7 @@ var produtos = new Array()
 function subtrairpao(){
     valor -= 3.50
     document.querySelector('.resultado').innerHTML = valor
+    let nota = document.querySelector('.nota')
     for (let k = 0; k < produtos.length; k++) {
         if  (produtos[k].startsWith('Pão')) {
             document.querySelector('.nota').innerHTML = produtos.splice(k, 1)
@@ -11,16 +12,27 @@ function subtrairpao(){
 }
 
 function somarpao(){
+    document.querySelector('.nota').innerHTML = ''
     valor += 3.50
     document.querySelector('.resultado').innerHTML = valor
-    produtos.push('Pão de queijo------------------------R$3,50')
-    document.querySelector('.nota').innerHTML += produtos
+    produtos.push('Pão de Queijo--------------------R$3,50')
+    let nota = document.querySelector('.nota')
+    for (var k = 0; k < produtos.length; k++){
+        let item = document.createElement('li')
+        item.appendChild(document.createTextNode(produtos[k]));
+        nota.appendChild(item)
+    }
+    //método removeChild() pesquisar 
 }
 
 function subtrairtoddy(){
     valor -= 2.50
     document.querySelector('.resultado').innerHTML = valor
-    document.querySelector('.nota').innerHTML -= 'Toddynho------------------------R$2,50'
+    for (let k = 0; k < produtos.length; k++) {
+        if  (produtos[k].startsWith('Toddy')) {
+            document.querySelector('.nota').innerHTML = produtos.splice(k, 1)
+        }
+    }
 }
 
 function somartoddy(){
@@ -44,5 +56,5 @@ function somartrento(){
 function reset(){
     valor = 0
     document.querySelector('.resultado').innerHTML = valor
-    document.querySelector('.nota').innerHTML += ''
+    document.querySelector('.nota').innerHTML += produtos.splice(0, produtos.length)
 }
