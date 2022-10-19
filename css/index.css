@@ -6,13 +6,16 @@
     background-color: aliceblue;
 }
 
-.corpo .option {
-    width: 80px;
-    height: 80px;
-}
-
 button:hover {
     background-color: royalblue;
+}
+
+.nota {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .corpo .pao {

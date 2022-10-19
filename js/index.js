@@ -1,74 +1,80 @@
 var valor = 0
-var produtos = new Array()
+var paes = 0
+var toddys = 0
+var trentos = 0
 function subtrairpao(){
-    valor -= 3.50
+    if (valor > 0){
+        valor -= 3.50
+        paes -= 1
+    }
     document.querySelector('.resultado').innerHTML = valor
-    let nota = document.querySelector('.nota')
-    for (let k = 0; k < produtos.length; k++) {
-        if  (produtos[k].startsWith('Pão')) {
-            document.querySelector('.nota').innerHTML = produtos.splice(k, 1)
-        }
+    if (paes >= 1) {
+        document.getElementById('pao_de_queijo').innerHTML = ''
+        document.getElementById('pao_de_queijo').innerHTML = `PÃO DE QUEIJO ---------- ${paes}x`
+    }else{
+        document.getElementById('pao_de_queijo').innerHTML = ''
     }
 }
 
 function somarpao(){
-    document.querySelector('.nota').innerHTML = ''
     valor += 3.50
     document.querySelector('.resultado').innerHTML = valor
-    produtos.push('Pão de Queijo--------------------R$3,50')
-    let nota = document.querySelector('.nota')
-    for (var k = 0; k < produtos.length; k++){
-        let item = document.createElement('li')
-        item.appendChild(document.createTextNode(produtos[k]));
-        nota.appendChild(item)
-    }
-    //método removeChild() pesquisar 
+    paes += 1
+    document.getElementById('pao_de_queijo').innerHTML = ''
+    document.getElementById('pao_de_queijo').innerHTML = `PÃO DE QUEIJO ---------- ${paes}x`
 }
 
 function subtrairtoddy(){
-    valor -= 2.50
+    if (valor > 0){
+        valor -= 2.50
+        toddys -= 1
+    }
     document.querySelector('.resultado').innerHTML = valor
-    for (let k = 0; k < produtos.length; k++) {
-        if  (produtos[k].startsWith('Toddy')) {
-            document.querySelector('.nota').innerHTML = produtos.splice(k, 1)
-        }
+    if (toddys >= 1) {
+        document.getElementById('toddynho').innerHTML = ''
+        document.getElementById('toddynho').innerHTML = `TODDYNHO ---------- ${toddys}x`
+    }else{
+        document.getElementById('toddynho').innerHTML = ''
     }
 }
 
 function somartoddy(){
-    document.querySelector('.nota').innerHTML = ''
     valor += 2.50
     document.querySelector('.resultado').innerHTML = valor
-    produtos.push('Toddynho--------------------R$2,50')
-    let nota = document.querySelector('.nota')
-    for (var k = 0; k < produtos.length; k++){
-        let item = document.createElement('li')
-        item.appendChild(document.createTextNode(produtos[k]));
-        nota.appendChild(item)
-    }
+    toddys += 1
+    document.getElementById('toddynho').innerHTML = ''
+    document.getElementById('toddynho').innerHTML = `TODDYNHO ---------- ${toddys}x`
 }
 
 function subtrairtrento(){
-    valor -= 1.50
+    if (valor > 0){
+        valor -= 1.50
+        trentos -= 1
+    }
     document.querySelector('.resultado').innerHTML = valor
-    document.querySelector('.nota').innerHTML -= 'Trento------------------------R$1,50'
+    if (trentos >= 1) {
+        document.getElementById('trento').innerHTML = ''
+        document.getElementById('trento').innerHTML = `TRENTO ---------- ${trentos}x`
+    }else{
+        document.getElementById('trento').innerHTML = ''
+    }
 }
 
 function somartrento(){
-    document.querySelector('.nota').innerHTML = ''
     valor += 1.50
     document.querySelector('.resultado').innerHTML = valor
-    produtos.push('Trento--------------------R$1,50')
-    let nota = document.querySelector('.nota')
-    for (var k = 0; k < produtos.length; k++){
-        let item = document.createElement('li')
-        item.appendChild(document.createTextNode(produtos[k]));
-        nota.appendChild(item)
-    }
+    trentos += 1
+    document.getElementById('trento').innerHTML = ''
+    document.getElementById('trento').innerHTML = `TRENTO ---------- ${trentos}x`
 }
 
 function reset(){
     valor = 0
     document.querySelector('.resultado').innerHTML = valor
-    document.querySelector('.nota').innerHTML = ''
+    document.getElementById('trento').innerHTML = ''
+    trentos = 0
+    document.getElementById('toddynho').innerHTML = ''
+    toddys = 0
+    document.getElementById('pao_de_queijo').innerHTML = ''
+    paes = 0
 }
